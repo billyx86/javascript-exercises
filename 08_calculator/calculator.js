@@ -8,14 +8,17 @@ const subtract = function(a, b) {
 };
 
 const sum = function(array) {
-  const sumResult = array.reduce((total, item) => {
-    return total + item;
+  const sumResult = array.reduce((accumulator, item) => {
+    return accumulator + item;
   }, 0);
   return sumResult;
 };
 
-const multiply = function() {
-
+const multiply = function(array) {
+  const multiplyResult = array.reduce((accumulator, item) => {
+    return accumulator * item;
+  }, 1);
+  return multiplyResult;
 };
 
 const power = function() {
