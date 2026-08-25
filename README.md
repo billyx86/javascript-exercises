@@ -12,10 +12,10 @@ If you have a suggestion to improve an exercise, an idea for a new exercise, or 
 
 1. Fork and clone this repository. To learn how to fork a repository, see the GitHub documentation on how to [fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo). 
     * Copies of repositories on your machine are called clones. If you need help cloning to your local environment you can learn how from the GitHub documentation on [cloning a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository).
-2. Before you start working on any execises, you should first ensure you have the following installed:
+2. Before you start working on any exercises, you should first ensure you have the following installed:
     * **NPM**. You should have installed NPM already in our [Installing Node.js](https://www.theodinproject.com/lessons/foundations-installing-node-js) lesson. Just in case you need to check, type `npm --version` in your terminal. If you get back `Command 'npm' not found, but can be installed with:`, **do not follow the instructions in the terminal** to install with `apt-get` as this causes permission issues. Instead, go back to the installation lesson and install Node with NVM by following the instructions there.
     * **Jest**. After cloning this repository to your local machine and installing NPM, go into the newly created directory (`cd javascript-exercises`) and run `npm install`. This will install Jest and set up the testing platform based on our preconfigured settings.
-3. Each exercise includes 3 files: a markdown file with a description of the task, an empty (or mostly empty) JavaScript file, and a set of tests. To complete an exercise, you'll need to go to the exercise directory with `cd exerciseName` in the terminal and run `npm test exerciseName.spec.js`. This should run the test file and show you the output.
+3. Each exercise includes 3 files: a markdown file with a description of the task, a JavaScript file to implement, and a set of tests. To complete an exercise, you'll need to go to the exercise directory with `cd exerciseName` in the terminal and run `npx jest exerciseName.spec.js`. This should run the test file and show you the output.
     * When you first run a test, it will fail. This is by design! You must open the exercise file and write the code needed to get the test to pass. 
 4. Some of the exercises have test conditions defined in their spec file as `test.skip` compared to `test`. This is purposeful. After you pass one `test`, you will change the next `test.skip` to `test` and test your code again. You'll do this until all conditions are satisfied. **All tests must pass at the same time**, and you should not have any `test.skip` instances by the time you finish an exercise.
 5. Once you successfully finish an exercise, check TOP's `solutions` branch to compare it with yours. 
@@ -29,4 +29,13 @@ The first exercise, `helloWorld`, will walk you through the process in-depth.
 
 ## Debugging
 
-To debug functions, you can run the tests in the Visual Studio Code debugger terminal. You can open this by clicking the "Run and Debug" icon on the left or pressing `ctrl + shift + D`, then clicking JavaScript Debug Terminal. You will be able to set breakpoints as you would in the Chrome DevTools debugger. You can run `npm test exerciseName.spec.js` to then execute your code up until your breakpoint and step through your code as necessary. **NOTE**: To take advantage of the debugger, you **MUST** run the script in the debugger terminal, not the bash or zsh terminal.
+To debug functions, you can run the tests in the Visual Studio Code debugger terminal. You can open this by clicking on the "Run and Debug" icon on the left or pressing `ctrl + shift + D`, then clicking JavaScript Debug Terminal. You will be able to set breakpoints as you would in the Chrome DevTools debugger. You can run `npx jest exerciseName.spec.js` to then execute your code up until your breakpoint and step through your code as necessary. **NOTE**: To take advantage of the debugger, you **MUST** run the script in the debugger terminal, not the bash or zsh terminal.
+
+## Running the full suite
+
+After `npm install`:
+
+- `npm test` — runs every exercise's spec with Jest (all 15 exercises, 94 tests)
+- `npm run lint` — lints the repo with ESLint
+
+CI (`.github/workflows/ci.yml`) runs both on every push and pull request.
